@@ -18,17 +18,19 @@ class UserTest extends CakeTestCase {
         $badData = $this->baseData;        
         //Specify unauthorized value and check that an error is detected
         $badData['User']['username'] = '';
-        $this->assertFalse($this->User->save($badData),'username must be specified');                
+        $this->assertFalse($this->User->save($badData),'username must be specified');
+        $badData['User']['username'] = 'user1';
         $this->assertFalse($this->User->save($badData),'username must be unique');
         $badData['User']['username'] = 'abcd';
         $this->assertFalse($this->User->save($badData),'username length must be at least 5');
         $badData['User']['username'] = 'abcdefghijklmnop';
         $this->assertFalse($this->User->save($badData),'username length must be at most 15');
-        $badData['User']['username'] = 'goodusername';        
+        $badData['User']['username'] = 'goodusername';
+        $this->assertNotEquals(false,$this->User->save($badData),'a good user can be saved');                
     }
     
     public function testPasswordConsistency() {
-        $this->User->create();        
+        $this->User->create(); 
         
         $badData = $this->baseData;
         
