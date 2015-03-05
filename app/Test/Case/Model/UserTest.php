@@ -40,4 +40,26 @@ class UserTest extends CakeTestCase {
         $badData['User']['password'] = 'abcd';
         $this->assertFalse($this->User->save($badData),'password lenght must be at least 5');
     }
+    
+    public function testPasswordEncryption() {
+        $user = $this->User->create();
+                
+        $oldUser = $this->User->find('first', 
+                                    array('order' => 'id DESC', 
+                                          'fields' => array('id', 'password')));
+        $oldId = $oldUser['User']['id'];
+        
+        //Secondary test to be sure we test the good field
+        $this->assertNotEquals(false,$this->User->save($this->baseData),
+                               'Be sure a new user has been saved');
+        $savedUser = $this->User->find('first', 
+                                        array('order' => 'id DESC', 
+                                              'fields' => array('id', 'password')))['User'];
+        $this->assertNotEquals($oldId, $savedUser['id'],
+                               'Be sure we retrieve the good id');
+        
+        //Main test to be sure password has been crypted
+        $this->assertNotEquals('password',$savedUser['password'],
+                               'password is encrypted');
+    }
 }
