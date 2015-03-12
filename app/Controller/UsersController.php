@@ -17,19 +17,21 @@ class UsersController extends AppController {
     public  $scaffold ;
     public function beforeFilter() {
         parent::beforeFilter();
-        $this->Auth->allow('add', 'login');
+        $this->Auth->allow('add', 'login','logout');
     }
     public function isAuthorized($user) {    
         // For some actions, current user has to be the integorated one ... 
         if (in_array($this->action, array('view', 'edit'))) {
-            $userId = (int) $this->request->params['pass'][0];
-            if(!$userId) $userId = $this->Auth->user('id');
+            if(isset($this->request->params['pass'][0])) {
+                $userId = (int) $this->request->params['pass'][0];
+            }
+            else {
+                $userId = $this->Auth->user('id');
+            }
             if ($userId == $this->Auth->user('id')) {
-//                die();
                 return true;
             }
         }
-//        die();
         // .. or have the default rules
         return parent::isAuthorized($user);
     }

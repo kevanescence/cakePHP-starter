@@ -39,14 +39,13 @@ class AppController extends Controller {
                 'action' => 'view'
             ),
             'logoutRedirect' => array(
-                'controller' => 'pages',
-                'action' => 'display',
-                'home'
+                'controller' => 'users',
+                'action' => 'login'
             ),
-            'authenticate' => array(
-                'Form' => array(
-                    'passwordHasher' => 'Blowfish'
-                )),
+//            'authenticate' => array(
+//                'Form' => array(
+//                    'passwordHasher' => 'Blowfish'
+//                )),
             'unauthorizedRedirect'=> array('controller' => 'users', 'action' => 'login'),
             'authorize' => array('Controller')
     ));

@@ -1,43 +1,59 @@
 <?php
-
 class UsersControllerTest extends ControllerTestCase {
     public $autoMock = true;
     public $fixtures = array('app.user');
+    
     public function setUp() {
-        parent::setUp();
-        $this->User = ClassRegistry::init('User');
+       ;
+       parent::setUp();
     }
     public function testLogin() {
-        $result = $this->testAction('/users/login', array('return' => 'contents'));        
-        $this->assertRegExp('/<html/', $this->contents);
-        $this->assertRegExp('/<form/', $this->view);
-                
+         
+        //Mock a user
         $this->Users = $this->generate( 'Users', array(
                 'components' => array(
                     'Auth' => array('user'),
                     'Security' => array( '_validatePost' ),
                 )
             ) );
-//        $this->Users->logout();
-        //create user data array with valid info
+        //log out an eventual previous user
+        $this->Users->Auth->logout();        
+
+        /***********    The authentication form is accessible *****************/
+        $result = $this->testAction('/users/login', 
+                                    array('return' => 'contents', 
+                                          'method' => 'get'));
+        $this->assertRegExp('/<html/', $this->contents);
+        $this->assertRegExp('/<form/', $this->view);
+        $this->assertContains( 'id="UserLoginForm"', $this->view);
+        
+        /****************** Bad authentication is detected *******************/
         $data = array();
-        $data['User']['username'] = 'admin';
-        $data['User']['password'] = 'admin';
+        $data['User']['username'] = 'user1';
+        $data['User']['password'] = 'surelyABadPwd';
 
         $result = $this->testAction(
             '/users/login',
             array('data' => $data, 'method' => 'post')
         );
-//        debug($result);
+        $this->testAction('/users/view/1', array('return' => 'contents'));;
+        $this->assertContains( '/users/login', $this->headers['Location']);
+        
+        /****************** Good authentication works *************************/
+        //create user data array with valid info
+        $data = array();
+        $data['User']['username'] = 'user1';
+        $data['User']['password'] = 'user1';
 
-        $result = $this->testAction('/users/view/1', array('return' => 'contents'));
-        debug($this->headers['Location'] );
-         $oldUser = $this->User->find('all', 
-                                    array('order' => 'id DESC', 
-                                          'fields' => array('id', 'username')));
-        $this->assertNotNull( $this->headers['Location'] );
-        $foo[] = $this->view;
-        debug($oldUser);
+        $result = $this->testAction(
+            '/users/login',
+            array('data' => $data, 'method' => 'post')
+        );
+        $result = $this->testAction('/users/view/1', array('return' => 'contents'));        
+        $this->assertNotContains( 'id="UserLoginForm"', $this->view);                        
+        
+        //Log out the mocked user
+        $this->Users->Auth->logout();        
     }
     
 //    public function testView() {

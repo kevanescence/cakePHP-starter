@@ -1,7 +1,7 @@
 <?php
 
 App::uses('AppModel', 'Model');
-App::uses('BlowfishPasswordHasher', 'Controller/Component/Auth');
+App::uses('SimplePasswordHasher', 'Controller/Component/Auth');
 /**
  * CakePHP User
  * @author kremy
@@ -45,11 +45,11 @@ class User extends AppModel {
     
     public function beforeSave($options = array()) {
         if (isset($this->data[$this->alias]['password'])) {
-            $passwordHasher = new BlowfishPasswordHasher();
+            $passwordHasher = new SimplePasswordHasher();
             $this->data[$this->alias]['password'] = $passwordHasher->hash(
-                $this->data[$this->alias]['password']
+                    $this->data[$this->alias]['password']
             );
         }
-    return true;
-}
+        return true;
+    }
 }
