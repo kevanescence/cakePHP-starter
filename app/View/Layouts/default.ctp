@@ -33,7 +33,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Project name3</a>                  
+          <a class="navbar-brand" href="#">Project name</a>                  
         </div>
         <div class="collapse navbar-collapse">
             <?php
@@ -43,7 +43,7 @@
                         'controller' => 'Users',
                         'action' => 'logout'                        
                     );
-                $logout_link = $this->Html->tag("li", $this->Html->link('Déconnexion', $option));
+                $logout_link = $this->Html->tag("li", $this->Html->link('Logout', $option));
                 }
             ?>
             <ul class="nav navbar-nav">                
