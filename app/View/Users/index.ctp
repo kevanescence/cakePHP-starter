@@ -1,0 +1,1 @@
+<h1> Welcome to <?= AuthComponent::user('username') ?>'s profile</h1>

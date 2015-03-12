@@ -1,0 +1,68 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 10 oct. 2014, 22:05:36
+    Author     : kremy
+*/
+
+.input-group {
+    margin-top:0.5em;
+    
+}
+
+img {
+    border-radius: 50%;    
+    margin:auto;
+}
+
+input#btn-save-info, a#btn-cancel {    
+    margin-top: 1em;
+    //position: absolute;       
+}
+.container.tab-pane {    
+    padding: 1em;
+    background-color: #f0f0f0;
+    border-color: #ddd;
+    border-style: solid;    
+    border-width: 0 1px 1px 1px;
+}
+
+div.user-badge-section {
+    text-align: center;
+}
+#btn-add-friend {
+    margin-top:1em;    
+}
+#UserSexeF {
+    margin-left: 1em;
+}
+
+/************************** The friend section ********************************/
+div.user-badge, a.btn-chg-picture {
+    text-align: center;
+    opacity: 0.4;
+    margin-bottom: 0.6em;
+}
+div.user-badge img {
+    margin-bottom: 0.3em;
+}
+div.user-badge:hover, a.btn-chg-picture:hover{
+    opacity: 1;
+}
+div.user-badge a.username {
+    display:block;
+    font-size: 1.2em;
+}
+div.user-badge a.username:hover {
+    cursor:pointer;
+}
+div.user-badge-section {
+    padding:0;
+}
+div.user-badge {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+}
