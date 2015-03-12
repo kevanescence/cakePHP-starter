@@ -7,6 +7,28 @@ class UsersControllerTest extends ControllerTestCase {
        ;
        parent::setUp();
     }
+    
+    private function loginRegularUser($username, $password){
+        $this->Users = $this->generate( 'Users', array(
+                'components' => array(
+                    'Auth' => array('user'),
+                    'Security' => array( '_validatePost' ),
+                )
+            ) );
+        $data = array();
+        $data['User']['username'] = $username;
+        $data['User']['password'] = $password;
+
+        $result = $this->testAction(
+            '/users/login',
+            array('data' => $data, 'method' => 'post')
+        );
+    }
+    
+    private function logoutUser(){
+        $this->Users->Auth->logout();
+    }
+    
     public function testLogin() {
          
         //Mock a user
@@ -56,7 +78,26 @@ class UsersControllerTest extends ControllerTestCase {
         $this->Users->Auth->logout();        
     }
     
-//    public function testView() {
-//       / $result = $this->testAction('/users/view', array('return' => 'contents'));
-//    }
+    public function testView() {
+       
+       /************* The profile view require authentication *****************/
+       $result = $this->testAction('/users/view/2', array('return' => 'contents'));        
+       $this->assertContains( '/users/login', $this->headers['Location']);                               
+       /********** A regular user cannot access to an other user page *********/
+       $this->loginRegularUser('user2', 'user2');
+       $result = $this->testAction('/users/view/3', array('return' => 'contents'));        
+       $this->assertContains( '/users/login', $this->headers['Location']);                               
+       
+       /********** A regular can access to its own page **********************/
+       $result = $this->testAction('/users/view/2', array('return' => 'contents'));        
+       $this->assertNotContains( 'id="UserLoginForm"', $this->view);
+       $this->logoutUser();       
+       
+       /************* admin can access to all user pages **********************/
+       $this->loginRegularUser('admin', 'admin');
+       $result = $this->testAction('/users/view/2', array('return' => 'contents'));
+       $this->assertNotContains( 'id="UserLoginForm"', $this->view);                        
+
+       $this->logoutUser();
+    }
 }
