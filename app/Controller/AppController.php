@@ -50,7 +50,7 @@ class AppController extends Controller {
             'authorize' => array('Controller')
     ));
     
-    public function isAuthorized($user) {
+    public function isAuthorized($user) {        
         if (isset($user['role']) && $user['role'] === 'admin') {
 //            die();
             return true;
@@ -59,7 +59,7 @@ class AppController extends Controller {
         return false;
     }
     
-    public function beforeFilter() {
+    public function beforeFilter() {        
         $this->Auth->allow('index');
     }
 

@@ -18,10 +18,11 @@ class UsersController extends AppController {
     public function beforeFilter() {
         parent::beforeFilter();
         $this->Auth->allow('add', 'login','logout');
+        
     }
-    public function isAuthorized($user) {    
-        // For some actions, current user has to be the integorated one ... 
-        if (in_array($this->action, array('view', 'edit'))) {
+    public function isAuthorized($user) {            
+        // For some actions, current user has to be the integorated one ...         
+        if (in_array($this->action, array('view', 'edit'))) {            
             if(isset($this->request->params['pass'][0])) {
                 $userId = (int) $this->request->params['pass'][0];
             }
