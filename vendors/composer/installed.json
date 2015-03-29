@@ -97,55 +97,6 @@
         ]
     },
     {
-        "name": "symfony/yaml",
-        "version": "v2.6.4",
-        "version_normalized": "2.6.4.0",
-        "target-dir": "Symfony/Component/Yaml",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/symfony/Yaml.git",
-            "reference": "60ed7751671113cf1ee7d7778e691642c2e9acd8"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/symfony/Yaml/zipball/60ed7751671113cf1ee7d7778e691642c2e9acd8",
-            "reference": "60ed7751671113cf1ee7d7778e691642c2e9acd8",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.3"
-        },
-        "time": "2015-01-25 04:39:26",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.6-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Symfony\\Component\\Yaml\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Symfony Community",
-                "homepage": "http://symfony.com/contributors"
-            },
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com"
-            }
-        ],
-        "description": "Symfony Yaml Component",
-        "homepage": "http://symfony.com"
-    },
-    {
         "name": "phpunit/php-text-template",
         "version": "1.2.0",
         "version_normalized": "1.2.0.0",
@@ -574,6 +525,358 @@
             "cakephp",
             "debug",
             "kit"
+        ]
+    },
+    {
+        "name": "symfony/yaml",
+        "version": "v2.6.5",
+        "version_normalized": "2.6.5.0",
+        "target-dir": "Symfony/Component/Yaml",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/Yaml.git",
+            "reference": "0cd8e72071e46e15fc072270ae39ea1b66b10a9d"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/Yaml/zipball/0cd8e72071e46e15fc072270ae39ea1b66b10a9d",
+            "reference": "0cd8e72071e46e15fc072270ae39ea1b66b10a9d",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "require-dev": {
+            "symfony/phpunit-bridge": "~2.7"
+        },
+        "time": "2015-03-12 10:28:44",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.6-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Symfony\\Component\\Yaml\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Symfony Community",
+                "homepage": "http://symfony.com/contributors"
+            },
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            }
+        ],
+        "description": "Symfony Yaml Component",
+        "homepage": "http://symfony.com"
+    },
+    {
+        "name": "sebastian/recursion-context",
+        "version": "1.0.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/sebastianbergmann/recursion-context.git",
+            "reference": "3989662bbb30a29d20d9faa04a846af79b276252"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/sebastianbergmann/recursion-context/zipball/3989662bbb30a29d20d9faa04a846af79b276252",
+            "reference": "3989662bbb30a29d20d9faa04a846af79b276252",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.4"
+        },
+        "time": "2015-01-24 09:48:32",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "src/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Jeff Welch",
+                "email": "whatthejeff@gmail.com"
+            },
+            {
+                "name": "Sebastian Bergmann",
+                "email": "sebastian@phpunit.de"
+            },
+            {
+                "name": "Adam Harvey",
+                "email": "aharvey@php.net"
+            }
+        ],
+        "description": "Provides functionality to recursively process PHP variables",
+        "homepage": "http://www.github.com/sebastianbergmann/recursion-context"
+    },
+    {
+        "name": "sebastian/exporter",
+        "version": "1.2.0",
+        "version_normalized": "1.2.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/sebastianbergmann/exporter.git",
+            "reference": "84839970d05254c73cde183a721c7af13aede943"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/sebastianbergmann/exporter/zipball/84839970d05254c73cde183a721c7af13aede943",
+            "reference": "84839970d05254c73cde183a721c7af13aede943",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3",
+            "sebastian/recursion-context": "~1.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.4"
+        },
+        "time": "2015-01-27 07:23:06",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.2.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "src/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Jeff Welch",
+                "email": "whatthejeff@gmail.com"
+            },
+            {
+                "name": "Volker Dusch",
+                "email": "github@wallbash.com"
+            },
+            {
+                "name": "Bernhard Schussek",
+                "email": "bschussek@2bepublished.at"
+            },
+            {
+                "name": "Sebastian Bergmann",
+                "email": "sebastian@phpunit.de"
+            },
+            {
+                "name": "Adam Harvey",
+                "email": "aharvey@php.net"
+            }
+        ],
+        "description": "Provides the functionality to export PHP variables for visualization",
+        "homepage": "http://www.github.com/sebastianbergmann/exporter",
+        "keywords": [
+            "export",
+            "exporter"
+        ]
+    },
+    {
+        "name": "sebastian/diff",
+        "version": "1.2.0",
+        "version_normalized": "1.2.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/sebastianbergmann/diff.git",
+            "reference": "5843509fed39dee4b356a306401e9dd1a931fec7"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/sebastianbergmann/diff/zipball/5843509fed39dee4b356a306401e9dd1a931fec7",
+            "reference": "5843509fed39dee4b356a306401e9dd1a931fec7",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.2"
+        },
+        "time": "2014-08-15 10:29:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.2-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "src/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Kore Nordmann",
+                "email": "mail@kore-nordmann.de"
+            },
+            {
+                "name": "Sebastian Bergmann",
+                "email": "sebastian@phpunit.de"
+            }
+        ],
+        "description": "Diff implementation",
+        "homepage": "http://www.github.com/sebastianbergmann/diff",
+        "keywords": [
+            "diff"
+        ]
+    },
+    {
+        "name": "sebastian/comparator",
+        "version": "1.1.1",
+        "version_normalized": "1.1.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/sebastianbergmann/comparator.git",
+            "reference": "1dd8869519a225f7f2b9eb663e225298fade819e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/sebastianbergmann/comparator/zipball/1dd8869519a225f7f2b9eb663e225298fade819e",
+            "reference": "1dd8869519a225f7f2b9eb663e225298fade819e",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3",
+            "sebastian/diff": "~1.2",
+            "sebastian/exporter": "~1.2"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.4"
+        },
+        "time": "2015-01-29 16:28:08",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.1.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "src/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Jeff Welch",
+                "email": "whatthejeff@gmail.com"
+            },
+            {
+                "name": "Volker Dusch",
+                "email": "github@wallbash.com"
+            },
+            {
+                "name": "Bernhard Schussek",
+                "email": "bschussek@2bepublished.at"
+            },
+            {
+                "name": "Sebastian Bergmann",
+                "email": "sebastian@phpunit.de"
+            }
+        ],
+        "description": "Provides the functionality to compare PHP values for equality",
+        "homepage": "http://www.github.com/sebastianbergmann/comparator",
+        "keywords": [
+            "comparator",
+            "compare",
+            "equality"
+        ]
+    },
+    {
+        "name": "phpunit/phpunit-selenium",
+        "version": "1.4.2",
+        "version_normalized": "1.4.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/giorgiosironi/phpunit-selenium.git",
+            "reference": "c84dd7ca214563868ce216123b7ae9c792beb262"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/giorgiosironi/phpunit-selenium/zipball/c84dd7ca214563868ce216123b7ae9c792beb262",
+            "reference": "c84dd7ca214563868ce216123b7ae9c792beb262",
+            "shasum": ""
+        },
+        "require": {
+            "ext-curl": "*",
+            "ext-dom": "*",
+            "php": ">=5.3.3",
+            "phpunit/phpunit": "~3.7|~4.0",
+            "sebastian/comparator": "~1.0"
+        },
+        "time": "2014-11-02 09:23:27",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "PHPUnit/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "include-path": [
+            ""
+        ],
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Sebastian Bergmann",
+                "email": "sb@sebastian-bergmann.de",
+                "role": "lead"
+            },
+            {
+                "name": "Giorgio Sironi",
+                "email": "info@giorgiosironi.com",
+                "role": "developer"
+            }
+        ],
+        "description": "Selenium Server integration for PHPUnit",
+        "homepage": "http://www.phpunit.de/",
+        "keywords": [
+            "selenium",
+            "testing",
+            "xunit"
         ]
     }
 ]

@@ -5,6 +5,12 @@
 	"keywords": ["framework"],
 	"homepage": "http://cakephp.org",
 	"license": "MIT",
+    "config": {
+      "vendor-dir": "vendors"
+    },
+    "autoload": {
+        "classmap":["vendors/composer/"]
+    },
 	"authors": [
 		{
 			"name": "CakePHP Community",
@@ -23,7 +29,8 @@
 	},
 	"require-dev": {
 		"phpunit/phpunit": "3.7.*",
-		"cakephp/debug_kit" : "2.2.*"
+		"cakephp/debug_kit" : "2.2.*",
+        "phpunit/phpunit-selenium": ">=1.2"
 	},
 	"bin": [
 		"lib/Cake/Console/cake"
