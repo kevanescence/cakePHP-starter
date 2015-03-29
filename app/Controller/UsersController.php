@@ -14,7 +14,7 @@ App::uses('AppController', 'Controller');
  */
 class UsersController extends AppController {
     //FIXME For dev purpose only
-    public  $scaffold ;
+    //public  $scaffold ;
     public function beforeFilter() {
         parent::beforeFilter();
         $this->Auth->allow('add', 'login','logout');
